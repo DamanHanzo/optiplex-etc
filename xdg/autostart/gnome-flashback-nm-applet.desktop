@@ -1,0 +1,32 @@
+[Desktop Entry]
+Name=Network (GNOME Flashback)
+Comment=Manage your network connections
+# TRANSLATORS: Don't translate this text (this is icon name)
+Icon[cs]=nm-device-wireless
+Icon[da]=nm-device-wireless
+Icon[de]=nm-device-wireless
+Icon[el]=nm-device-wireless
+Icon[es]=nm-device-wireless
+Icon[eu]=nm-device-wireless
+Icon[fur]=nm-device-wireless
+Icon[hu]=nm-device-wireless
+Icon[id]=nm-device-wireless
+Icon[it]=nm-device-wireless
+Icon[pl]=nm-device-wireless
+Icon[pt]=nm-dispositivo-sem fios
+Icon[pt_BR]=nm-device-wireless
+Icon[ru]=nm-device-wireless
+Icon[sk]=nm-device-wireless
+Icon[sr]=ум—уређај—бежична
+Icon[sr@latin]=um—uređaj—bežična
+Icon[sv]=nm-device-wireless
+Icon[zh_CN]=nm-device-wireless
+Icon=nm-device-wireless
+Exec=nm-applet
+TryExec=nm-applet
+Terminal=false
+Type=Application
+NoDisplay=true
+OnlyShowIn=GNOME-Flashback;
+X-GNOME-UsesNotifications=true
+X-Ubuntu-Gettext-Domain=gnome-flashback

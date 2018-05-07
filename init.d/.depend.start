@@ -1,0 +1,32 @@
+TARGETS = killprocs console-setup.sh unattended-upgrades rsyslog lvm2-lvmetad uuidd nmbd lvm2-lvmpolld samba-ad-dc single apport speech-dispatcher irqbalance dbus xrdp thermald postgresql kerneloops ntp whoopsie ssh cron rsync acpid anacron sysstat netplan avahi-daemon lightdm spice-vdagent bluetooth gdm3 cups cups-browsed saned smbd plymouth ondemand rc.local grub-common
+INTERACTIVE = console-setup.sh
+single: killprocs
+speech-dispatcher: rsyslog
+irqbalance: rsyslog
+dbus: rsyslog
+xrdp: rsyslog
+thermald: rsyslog
+postgresql: rsyslog
+kerneloops: rsyslog
+ntp: rsyslog
+whoopsie: rsyslog
+ssh: rsyslog
+cron: rsyslog
+rsync: rsyslog
+acpid: rsyslog
+anacron: rsyslog
+sysstat: rsyslog
+netplan: rsyslog
+avahi-daemon: dbus rsyslog
+lightdm: dbus acpid
+spice-vdagent: dbus
+bluetooth: rsyslog dbus
+gdm3: dbus acpid
+cups: rsyslog
+cups-browsed: rsyslog
+saned: rsyslog dbus
+smbd: nmbd cups
+plymouth: gdm3 unattended-upgrades speech-dispatcher rsyslog lvm2-lvmetad irqbalance dbus uuidd avahi-daemon lightdm xrdp nmbd smbd lvm2-lvmpolld thermald spice-vdagent bluetooth cups postgresql samba-ad-dc cups-browsed kerneloops ntp whoopsie saned console-setup.sh ssh cron rsync apport acpid anacron sysstat netplan
+ondemand: unattended-upgrades speech-dispatcher rsyslog lvm2-lvmetad irqbalance gdm3 dbus uuidd avahi-daemon lightdm xrdp nmbd smbd lvm2-lvmpolld thermald spice-vdagent bluetooth cups postgresql samba-ad-dc cups-browsed kerneloops ntp whoopsie saned console-setup.sh ssh cron rsync apport acpid anacron sysstat netplan
+rc.local: unattended-upgrades speech-dispatcher rsyslog lvm2-lvmetad irqbalance gdm3 dbus uuidd avahi-daemon lightdm xrdp nmbd smbd lvm2-lvmpolld thermald spice-vdagent bluetooth cups postgresql samba-ad-dc cups-browsed kerneloops ntp whoopsie saned console-setup.sh ssh cron rsync apport acpid anacron sysstat netplan
+grub-common: unattended-upgrades speech-dispatcher rsyslog lvm2-lvmetad irqbalance gdm3 dbus uuidd avahi-daemon lightdm xrdp nmbd smbd lvm2-lvmpolld thermald spice-vdagent bluetooth cups postgresql samba-ad-dc cups-browsed kerneloops ntp whoopsie saned console-setup.sh ssh cron rsync apport acpid anacron sysstat netplan

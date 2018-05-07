@@ -1,0 +1,24 @@
+# gtk3-nocsd global configuration
+#
+# This file configures the global behavior of gtk3-nocsd. These
+# settings may be overridden by individual users by setting the same
+# variables to different values in their ~/.xsessionrc.
+
+#
+# Whether to disable CSD on non-GNOME desktops
+#    0: disable CSD
+#    1: enable CSD
+#
+# If this setting is left unset, it will default to 0 (CSD disabled)
+# unless GTK3_NOCSD_IGNORE is set to 1, in which case it will remain
+# unset. (With gtk defaulting to showing CSDs.)
+#
+#export GTK_CSD=0
+
+#
+# Whether to not preload libgtk3-nocsd.so.0 even if GTK_CSD=0
+#
+# If this setting is set to 1, LD_PRELOAD and GTK_CSD will not be
+# touched upon session startup.
+#
+#export GTK3_NOCSD_IGNORE=0

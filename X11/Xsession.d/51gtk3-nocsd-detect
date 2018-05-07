@@ -1,0 +1,26 @@
+# This file is sourced by Xsession(5), not executed.
+
+# Check if /usr/bin/gtk3-nocsd is executable, to make sure that the
+# case where gtk3-nocsd is removed but not yet purged is also
+# handled properly.
+if [ -x /usr/bin/gtk3-nocsd ] && ( [ -z "$GTK3_NOCSD_IGNORE" ] || [ x"$GTK3_NOCSD_IGNORE"x = x"0"x ] ) ; then
+    case "$XDG_CURRENT_DESKTOP" in
+      *GNOME*|*Gnome*)
+          # This is GNOME, make sure GTK_CSD is not set to 0
+          if [ x"$GTK_CSD"x = x"0"x ] ; then
+              unset GTK_CSD
+          fi
+          ;;
+      *)
+          # not GNOME, and the user didn't specify GTK_CSD
+          # themselves, so set it to 0
+          if [ -z "$GTK_CSD" ] ; then
+              GTK_CSD=0
+          fi
+          export GTK_CSD
+          if [ x"$GTK_CSD"x = x"0"x ] ; then
+              export LD_PRELOAD="libgtk3-nocsd.so.0${LD_PRELOAD:+:$LD_PRELOAD}"
+          fi
+          ;;
+    esac
+fi

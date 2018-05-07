@@ -1,0 +1,38 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          netplan
+# Required-Start:    $remote_fs $network $syslog
+# Required-Stop:     $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Netplan calendar service.
+# Description:       The server part of plan.
+### END INIT INFO
+
+if [ true != "$INIT_D_SCRIPT_SOURCED" ] ; then
+    if [ -e /lib/init/init-d-script ] ; then
+        script=/lib/init/init-d-script
+    else
+        # Use local copy to ease backporting
+        script=/usr/share/netplan/init-d-script
+    fi
+    set "$0" "$@"; INIT_D_SCRIPT_SOURCED=true . $script
+fi
+
+# Set ENABLED=0 to disable, ENABLED=1 to enable.
+ENABLED=0
+
+DAEMON=/usr/sbin/netplan
+DESC="plan appointment daemon"
+PIDFILE=none
+
+# Load local overrides
+if [ -f /etc/default/netplan ] ; then
+    . /etc/default/netplan
+fi
+
+if [ "$ENABLED" = 0 ]
+then
+    echo "Netplan daemon not enabled in /etc/init.d/netplan."
+    exit 0
+fi

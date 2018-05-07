@@ -1,0 +1,8 @@
+# This file is sourced by Xsession(5), not executed.
+
+# Some other startup programs may drop LD_PRELOAD as environment
+# variable (ssh-agent is known for this), so make sure it's set
+# explicitly again AFTER ssh-agent has been called.
+if [ -n "$LD_PRELOAD" ] ; then
+    STARTUP="env LD_PRELOAD=$LD_PRELOAD $STARTUP"
+fi

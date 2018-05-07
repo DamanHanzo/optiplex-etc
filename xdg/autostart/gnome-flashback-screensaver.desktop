@@ -1,0 +1,32 @@
+[Desktop Entry]
+Type=Application
+Name=Screensaver (GNOME Flashback)
+Comment=Launch screensaver and locker program
+# TRANSLATORS: Don't translate this text (this is icon name)
+Icon[cs]=preferences-desktop-screensaver
+Icon[da]=preferences-desktop-screensaver
+Icon[de]=preferences-desktop-screensaver
+Icon[el]=preferences-desktop-screensaver
+Icon[es]=preferences-desktop-screensaver
+Icon[eu]=preferences-desktop-screensaver
+Icon[fur]=preferences-desktop-screensaver
+Icon[hu]=preferences-desktop-screensaver
+Icon[id]=preferences-desktop-screensaver
+Icon[it]=preferences-desktop-screensaver
+Icon[pl]=preferences-desktop-screensaver
+Icon[pt]=preferências-área de trabalho-protetor de ecrã
+Icon[pt_BR]=preferences-desktop-screensaver
+Icon[ru]=preferences-desktop-screensaver
+Icon[sk]=preferences-desktop-screensaver
+Icon[sr]=поставке—радна површ—чувар екрана
+Icon[sr@latin]=postavke—radna površ—čuvar ekrana
+Icon[sv]=preferences-desktop-screensaver
+Icon[zh_CN]=preferences-desktop-screensaver
+Icon=preferences-desktop-screensaver
+Exec=gnome-screensaver
+TryExec=gnome-screensaver
+OnlyShowIn=GNOME-Flashback;
+NoDisplay=true
+X-GNOME-Autostart-Phase=Application
+X-GNOME-Autostart-Notify=true
+X-Ubuntu-Gettext-Domain=gnome-flashback

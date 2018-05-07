@@ -1,0 +1,2 @@
+# deb http://ppa.launchpad.net/webupd8team/sublime-text-3/ubuntu bionic main # disabled on upgrade to bionic
+# deb-src http://ppa.launchpad.net/webupd8team/sublime-text-3/ubuntu xenial main
