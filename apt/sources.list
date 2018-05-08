@@ -49,3 +49,5 @@ deb http://security.ubuntu.com/ubuntu bionic-security universe
 # deb-src http://security.ubuntu.com/ubuntu xenial-security universe
 deb http://security.ubuntu.com/ubuntu bionic-security multiverse
 # deb-src http://security.ubuntu.com/ubuntu xenial-security multiverse
+deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+# deb-src [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable

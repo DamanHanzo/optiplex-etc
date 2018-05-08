@@ -72,3 +72,4 @@ ntp:x:131:
 rdma:x:105:
 geoclue:x:132:
 gdm:x:133:
+netplan:x:63434:

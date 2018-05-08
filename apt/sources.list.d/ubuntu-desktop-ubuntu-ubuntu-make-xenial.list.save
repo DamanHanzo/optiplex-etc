@@ -1,0 +1,2 @@
+# deb http://ppa.launchpad.net/ubuntu-desktop/ubuntu-make/ubuntu bionic main # disabled on upgrade to bionic
+# deb-src http://ppa.launchpad.net/ubuntu-desktop/ubuntu-make/ubuntu xenial main

@@ -1,13 +1,14 @@
-TARGETS = alsa-utils ufw unattended-upgrades lvm2-lvmetad uuidd nmbd lvm2-lvmpolld samba-ad-dc speech-dispatcher irqbalance xrdp thermald postgresql kerneloops ntp whoopsie netplan lightdm resolvconf spice-vdagent bluetooth cups-browsed saned smbd plymouth urandom avahi-daemon gdm3 cups sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot halt reboot
+TARGETS = alsa-utils ufw unattended-upgrades ubuntu-fan lvm2-lvmetad uuidd nmbd lvm2-lvmpolld samba-ad-dc speech-dispatcher netplan irqbalance xrdp thermald postgresql kerneloops ntp whoopsie docker lightdm resolvconf spice-vdagent bluetooth cups-browsed saned smbd plymouth urandom cgroupfs-mount avahi-daemon gdm3 cups sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot halt reboot
+cgroupfs-mount: docker
 avahi-daemon: cups-browsed saned
 gdm3: plymouth
 cups: smbd
-sendsigs: unattended-upgrades alsa-utils speech-dispatcher irqbalance gdm3 uuidd avahi-daemon lightdm xrdp nmbd thermald spice-vdagent bluetooth smbd postgresql samba-ad-dc plymouth cups-browsed kerneloops netplan
-rsyslog: speech-dispatcher irqbalance avahi-daemon xrdp sendsigs thermald bluetooth postgresql cups-browsed kerneloops ntp whoopsie cups saned netplan
-umountnfs.sh: unattended-upgrades alsa-utils speech-dispatcher irqbalance gdm3 uuidd avahi-daemon lightdm xrdp rsyslog nmbd thermald spice-vdagent bluetooth smbd postgresql sendsigs samba-ad-dc plymouth cups-browsed kerneloops netplan
+sendsigs: unattended-upgrades alsa-utils ubuntu-fan speech-dispatcher netplan irqbalance gdm3 uuidd avahi-daemon docker lightdm xrdp nmbd thermald spice-vdagent bluetooth smbd postgresql samba-ad-dc cgroupfs-mount plymouth cups-browsed kerneloops
+rsyslog: speech-dispatcher netplan irqbalance avahi-daemon docker xrdp sendsigs thermald bluetooth postgresql cgroupfs-mount cups-browsed kerneloops ntp whoopsie cups saned
+umountnfs.sh: unattended-upgrades alsa-utils ubuntu-fan speech-dispatcher netplan irqbalance gdm3 uuidd avahi-daemon docker lightdm xrdp rsyslog nmbd thermald spice-vdagent bluetooth smbd postgresql sendsigs samba-ad-dc cgroupfs-mount plymouth cups-browsed kerneloops
 hwclock.sh: uuidd rsyslog postgresql cups-browsed kerneloops
-networking: umountnfs.sh lightdm xrdp nmbd smbd postgresql samba-ad-dc cups-browsed kerneloops netplan
-umountfs: networking unattended-upgrades alsa-utils speech-dispatcher urandom lvm2-lvmetad hwclock.sh umountnfs.sh irqbalance gdm3 uuidd avahi-daemon lightdm xrdp nmbd lvm2-lvmpolld resolvconf thermald spice-vdagent bluetooth smbd postgresql samba-ad-dc plymouth cups-browsed kerneloops netplan
+networking: ubuntu-fan netplan umountnfs.sh lightdm xrdp nmbd smbd postgresql samba-ad-dc cups-browsed kerneloops
+umountfs: networking unattended-upgrades alsa-utils ubuntu-fan speech-dispatcher netplan urandom lvm2-lvmetad hwclock.sh umountnfs.sh irqbalance gdm3 uuidd avahi-daemon docker lightdm xrdp nmbd lvm2-lvmpolld resolvconf thermald spice-vdagent bluetooth smbd postgresql samba-ad-dc cgroupfs-mount plymouth cups-browsed kerneloops
 umountroot: umountfs
 halt: umountroot
 reboot: umountroot
